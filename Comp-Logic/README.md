@@ -1,5 +1,5 @@
 # Computational Logic for Artificial Intelligence
-Course follows the [online book](https://too.simply-logical.space/src/simply-logical.html).
+Course follows the [online book](https://too.simply-logical.space/src/simply-logical.html). First example [image](https://too.simply-logical.space/_images/image002.svg).
 
 
 Programme by week:
@@ -13,3 +13,7 @@ Programme by week:
  8. Reasoning with incomplete information [Chapter 8](https://too.simply-logical.space/src/text/3_part_iii/8.0.html)
  9. Inductive reasoning [Chapter 9](https://too.simply-logical.space/src/text/3_part_iii/9.0.html)
  10. Advanced topics
+
+ ## Week 1
+ TODO:
+  - proof trees
