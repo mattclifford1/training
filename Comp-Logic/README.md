@@ -1,5 +1,5 @@
 # Computational Logic for Artificial Intelligence
-Course follows the [online book](https://too.simply-logical.space/src/simply-logical.html). First example [image](https://too.simply-logical.space/_images/image002.svg).
+[Course](https://www.ole.bris.ac.uk/webapps/blackboard/execute/announcement?method=search&context=course_entry&course_id=_247661_1&handle=announcements_entry&mode=view) follows the [online book](https://too.simply-logical.space/src/simply-logical.html). First example [image](https://too.simply-logical.space/_images/image002.svg).
 
 
 Programme by week:
