@@ -14,6 +14,9 @@ Programme by week:
  9. Inductive reasoning [Chapter 9](https://too.simply-logical.space/src/text/3_part_iii/9.0.html)
  10. Advanced topics
 
- ## Week 1
+## Week 1
  TODO:
   - proof trees
+
+## Week 2
+ - 
