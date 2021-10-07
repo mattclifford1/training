@@ -1,17 +1,15 @@
 # CDT training year
 
-ToDO:
- - Reading for Dialogue - skim over again
- - Reading for MLP   -  skim over final bits/ ROC graphs
- - Reading for Prolog  - do all
-
 
 Extras:
  - Catch up UM/ week 2 videos
 
 
-For next Week:
- - Prolog reading (for chairing!)
- - MLP Chapter
- - Dialogue
- - (UM videos)
+For Week 2:
+ - Dialogue notebook finish
+ - Profile for website
+
+For Week 3:
+ - reading (prolog/MLP/Dialogue)
+ - come up with group project (Thurs)
+ - Transport videos?
