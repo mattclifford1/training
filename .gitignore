@@ -1,2 +1,3 @@
 *.ptc
 */data_cache
+.ipynb_checkpoints/
