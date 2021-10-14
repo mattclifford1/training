@@ -16,3 +16,30 @@ Social Media data: can use eg twitter for location of where a tweets are posted 
  - bias
  - live stream
  - uncontrolled
+
+
+## Week 3
+
+Distance. How do we calculate distance?
+ - approxomate the planet as a sphere with `r=6371 km`. This takes into x,y,z cartisiean space. Calculate the Euclidean distance straight line from This
+ - Geodesic takes into account the curvature on the surface of a sphere, which is more accurate for long range.
+ - Isochrome map is a map of equal time (old fashioned)
+
+What is distance?
+ - Euclidean
+ - shortest
+ - quickest
+ - cheapest
+ - etc
+
+Flow data. Standard to show adjacency OD matrix, but this doesn't show much.
+
+`Gravity model`. populations between two points divided by distance. - look at example in the slides.
+
+`Intervening opportunities model`. Takes into account how many 'opportunities' there are during the journey.
+
+`Radiation model`. Sum the opportunities in the radius from the distance along the journey not just the journey itself.
+
+We can compare these models against the empirical data sets using e.g. the F1 score.
+
+What model is best? (look at slide for full reasons?) parameter free vs black-box.
