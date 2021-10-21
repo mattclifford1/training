@@ -43,3 +43,19 @@ Flow data. Standard to show adjacency OD matrix, but this doesn't show much.
 We can compare these models against the empirical data sets using e.g. the F1 score.
 
 What model is best? (look at slide for full reasons?) parameter free vs black-box.
+
+
+## Week 4
+* try question 12 on the worksheet.
+* Q 14 extension, but is hard.
+Optimisation always constrained to x_{i} >= 0 and sum of all x_{i} = d.
+
+User Equilibrium
+  - model for real life decision
+  - users take the lowest cost path for themselves
+  - Transferred to optimisation problem using Beckman's formula
+
+
+System Optimal
+  - Best cost for all users as a total
+  - Theoretical
