@@ -59,3 +59,8 @@ User Equilibrium
 System Optimal
   - Best cost for all users as a total
   - Theoretical
+
+
+## Week 5
+Beckman trick works even without the routes.
+x are the links. y are the routes. -> `x = Ay`.
