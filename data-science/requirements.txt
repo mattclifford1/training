@@ -2,3 +2,5 @@ beautifulsoup4
 pandas
 notebook
 requests
+scikit-learn
+seaborn
