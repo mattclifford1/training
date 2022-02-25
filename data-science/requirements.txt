@@ -4,3 +4,4 @@ notebook
 requests
 scikit-learn
 seaborn
+plotly==4.14.3
