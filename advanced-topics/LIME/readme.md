@@ -12,5 +12,11 @@ install requirements:
 $ pip install -r requirements.txt
 ```
 
+run local notebook server:
+
+```
+$ jupyter-notebook
+```
+
 # training spam classifier
 to train spam classifier for text classification, run the notebook inside `train_spam_clf`
