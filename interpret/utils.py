@@ -19,6 +19,7 @@ def weight_locally(point, samples):
 
     return [1]*samples.shape[0]   # even weighting for now
 
+
 def clf_difference(c1, c2):
     # compare difference in clfs weights
     return np.sum(np.abs(c1.get_weights() - c2.get_weights()))
@@ -39,7 +40,7 @@ class eX_clf():
 
 
 if __name__ == '__main__':
-    from toy_data import sample_data
+    from toy_data import sample_data, plot_data, plot_classifier
     X, y = sample_data()
     clf_original = eX_clf(X, y)
 
@@ -55,9 +56,16 @@ if __name__ == '__main__':
         percents.append(perc)
         clf_diffs.append(diff)
 
+
+    fig = plt.figure()
+    plt.subplot(2, 2, 1)
+    plot_data(X, y)
+    plot_classifier(clf_original.model)
+
     clf_diffs = np.array(clf_diffs)
     mean_diffs = np.mean(clf_diffs, axis=1)
     std_diffs = np.std(clf_diffs, axis=1)
+    plt.subplot(2, 2, 2)
     plt.plot(percents, mean_diffs, '-')
     plt.fill_between(percents,
                      mean_diffs - std_diffs,

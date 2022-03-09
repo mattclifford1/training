@@ -38,11 +38,10 @@ def plot_surrogate(b, w1, w2, lims):
     plt.plot(xd, yd, 'k', lw=1, ls=':')
 
 def sample_data():
-
     means = [[10, 2],
              [5, 6],
              [2, 3]]
-
+             
     covs = [[[1, 0],
              [0, 4]],
 
@@ -64,12 +63,16 @@ def sample_data():
         # plot
     return X, y
 
+def plot_data(X, y):
+    plot_colours = {0:'red', 1:'blue'}
+    plt.scatter(X[:,0], X[:,1], 1, color=np.vectorize(plot_colours.get)(y))
+
 
 if __name__ == '__main__':
     X, y = sample_data()
-
     plot_colours = {0:'red', 1:'blue'}
     plt.scatter(X[:,0], X[:,1], 1, color=np.vectorize(plot_colours.get)(y))
+
 
     clf = LogisticRegression(random_state=0).fit(X, y)
     clf.predict(X[:2, :])
