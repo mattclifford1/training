@@ -1,14 +1,14 @@
 from sklearn.linear_model import LogisticRegression
 import numpy as np
 import matplotlib.pyplot as plt
+import random
 
 def sample_rand_points(X, clf, percent=20):
     # get percentage of points and estimate labels using clf
     total_samples = X.shape[0]
     number_to_sample = int(total_samples*percent/100)
-    random_indices = np.random.choice(total_samples,
-                                      size=number_to_sample,
-                                      replace=False)
+    all_indices = range(total_samples)
+    random_indices = random.sample(all_indices, number_to_sample)
     X_random = X[random_indices, :]
     y_random = clf.predict(X_random)
     return X_random, y_random
