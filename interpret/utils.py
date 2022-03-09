@@ -45,12 +45,22 @@ if __name__ == '__main__':
 
     percents = []
     clf_diffs = []
-    for perc in range(1, 100):
-        X_local, y_local = sample_rand_points(X, clf_original, perc)
-        clf_explaination = eX_clf(X_local, y_local)
-        diff = clf_difference(clf_original, clf_explaination)
+    for perc in range(1, 101):
+        diff = []
+        for i in range(10):
+            X_local, y_local = sample_rand_points(X, clf_original, perc)
+            X_weights = weight_locally(X[1,:], X_local)
+            clf_explaination = eX_clf(X_local, y_local, X_weights)
+            diff.append(clf_difference(clf_original, clf_explaination))
         percents.append(perc)
         clf_diffs.append(diff)
 
-    plt.plot(percents, clf_diffs)
+    clf_diffs = np.array(clf_diffs)
+    mean_diffs = np.mean(clf_diffs, axis=1)
+    std_diffs = np.std(clf_diffs, axis=1)
+    plt.plot(percents, mean_diffs, '-')
+    plt.fill_between(percents,
+                     mean_diffs - std_diffs,
+                     mean_diffs + std_diffs,
+                     alpha=0.2)
     plt.show()
