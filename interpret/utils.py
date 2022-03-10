@@ -38,37 +38,43 @@ class eX_clf():
         return self.model.predict(X)
 
 
+def plot_with_std(x_axis, y_axis, colour='blue'):
+    # y axis is multiple data point we will plot mean and std of
+    y_axis = np.array(y_axis)
+    mean_diffs = np.mean(y_axis, axis=1)
+    std_diffs = np.std(y_axis, axis=1)
+    plt.plot(x_axis, mean_diffs, '-', color=colour)
+    plt.fill_between(x_axis,
+                     mean_diffs - std_diffs,
+                     mean_diffs + std_diffs,
+                     alpha=0.2,
+                     color=colour)
+
+def run_all(clf_original, X, percents):
+    clf_diffs = []
+    for perc in percents:
+        diff = []
+        for i in range(3):
+            X_local, y_local = sample_rand_points(X, clf_original, perc)
+            X_weights = weight_locally(X[1,:], X_local)
+            clf_explaination = eX_clf(X_local, y_local, X_weights)
+            diff.append(clf_difference(clf_original, clf_explaination))
+        clf_diffs.append(diff)
+    return clf_diffs
+
 
 if __name__ == '__main__':
     from toy_data import sample_data, plot_data, plot_classifier
     X, y = sample_data()
     clf_original = eX_clf(X, y)
 
-    percents = []
-    clf_diffs = []
-    for perc in range(1, 101):
-        diff = []
-        for i in range(10):
-            X_local, y_local = sample_rand_points(X, clf_original, perc)
-            X_weights = weight_locally(X[1,:], X_local)
-            clf_explaination = eX_clf(X_local, y_local, X_weights)
-            diff.append(clf_difference(clf_original, clf_explaination))
-        percents.append(perc)
-        clf_diffs.append(diff)
-
+    percents = range(1, 101)
+    clf_diffs = run_all(clf_original, X, percents)
 
     fig = plt.figure()
     plt.subplot(2, 2, 1)
     plot_data(X, y)
     plot_classifier(clf_original.model)
-
-    clf_diffs = np.array(clf_diffs)
-    mean_diffs = np.mean(clf_diffs, axis=1)
-    std_diffs = np.std(clf_diffs, axis=1)
     plt.subplot(2, 2, 2)
-    plt.plot(percents, mean_diffs, '-')
-    plt.fill_between(percents,
-                     mean_diffs - std_diffs,
-                     mean_diffs + std_diffs,
-                     alpha=0.2)
+    plot_with_std(percents, clf_diffs)
     plt.show()
