@@ -2,6 +2,7 @@ from sklearn.linear_model import LogisticRegression
 import numpy as np
 import matplotlib.pyplot as plt
 import random
+from tqdm import tqdm
 
 def sample_rand_points(X, clf, percent=20):
     # get percentage of points and estimate labels using clf
@@ -50,11 +51,11 @@ def plot_with_std(x_axis, y_axis, colour='blue'):
                      alpha=0.2,
                      color=colour)
 
-def run_all(clf_original, X, percents):
+def run_all(clf_original, X, percents, runs=3):
     clf_diffs = []
-    for perc in percents:
+    for perc in tqdm(percents):
         diff = []
-        for i in range(3):
+        for i in range(runs):
             X_local, y_local = sample_rand_points(X, clf_original, perc)
             X_weights = weight_locally(X[1,:], X_local)
             clf_explaination = eX_clf(X_local, y_local, X_weights)
@@ -65,16 +66,19 @@ def run_all(clf_original, X, percents):
 
 if __name__ == '__main__':
     from toy_data import sample_data, plot_data, plot_classifier
+    # get data and classifier to explain
     X, y = sample_data()
     clf_original = eX_clf(X, y)
-
-    percents = range(1, 101)
-    clf_diffs = run_all(clf_original, X, percents)
-
+    # plot data and decision boundary
     fig = plt.figure()
     plt.subplot(2, 2, 1)
     plot_data(X, y)
     plot_classifier(clf_original.model)
+
+    # run explaination on different percentages local data
+    percents = range(1, 101)
+    clf_diffs = run_all(clf_original, X, percents, runs=100)
+    # plot results
     plt.subplot(2, 2, 2)
     plot_with_std(percents, clf_diffs)
     plt.show()
