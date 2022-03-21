@@ -28,4 +28,7 @@ Dataset liabilty
 Model liabilty 
  - shelf life
  - conditions of use (domain and risk)
+ - documenting any biases in the model
+ - is it fair to release models with bias? (as long as they are explicitly said?)
+ - 
 
