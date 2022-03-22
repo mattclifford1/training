@@ -12,6 +12,8 @@ end goal for an article for theconversation for the interest to the public
 ## Ethic issues for presentation
 quick ideas
 
+adverserial attacks eg. white text on job interview cv read by AI
+
 ### Counterfactuals
 Is giving counterfactuals ethical?
  - Reasonable?
