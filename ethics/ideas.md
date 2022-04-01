@@ -29,3 +29,6 @@ Model liabilty
  - shelf life
  - conditions of use (domain and risk)
 
+
+### misc
+look up about Timnit Gebru
