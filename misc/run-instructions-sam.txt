@@ -35,16 +35,27 @@ install other dependancies
 sudo apt update && sudo apt upgrade -y && sudo apt install -y unzip && sudo apt-get install ffmpeg libsm6 libxext6  -y
 
 -----------
+-----------
+accessing files
+open file explorer and go to:
+\\wsl$\Ubuntu\home
+
+
+
+
+
+
+
+SLOW mo repo (needs more than RGB data)
+-----------
+-----------
 follow instructions of github repo to install slowmo (https://github.com/uzh-rpg/rpg_timelens?ref=hackernoon.com)
 (need to install pytorch 1.12 and use pip for other deps)
 
 
 
 
---------
-accessing file 
-open file explorer and go to:
-\\wsl$\Ubuntu\home
+
 
 
 
