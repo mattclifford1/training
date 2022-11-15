@@ -1,0 +1,48 @@
+open command prompt and install wsl using the command:
+wsl --install
+
+now restart the computer
+
+if there are any errors you will need to enable virtual machine platform (link here)
+
+
+-----------------------------------------------
+open ubuntu from start
+
+create user name/password
+
+- installing conda (python)
+use the following commands:
+
+mkdir Downloads && cd Downloads
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+
+follow the install incrustions, enter, yes to both when given the option
+
+activate conda
+
+cd ~
+source .bashrc
+conda update -y -n base -c defaults conda
+
+now close ubuntu and reopen for changes to take effect
+
+
+install other dependancies
+sudo apt update && sudo apt upgrade -y && sudo apt install -y unzip && sudo apt-get install ffmpeg libsm6 libxext6  -y
+
+-----------
+follow instructions of github repo to install slowmo (https://github.com/uzh-rpg/rpg_timelens?ref=hackernoon.com)
+(need to install pytorch 1.12 and use pip for other deps)
+
+
+
+
+--------
+accessing file 
+open file explorer and go to:
+\\wsl$\Ubuntu\home
+
+
+
