@@ -1,3 +1,5 @@
+WSL -> https://learn.microsoft.com/en-us/windows/wsl/install
+
 open command prompt and install wsl using the command:
 wsl --install
 
