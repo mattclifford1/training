@@ -40,6 +40,22 @@ accessing files
 open file explorer and go to:
 \\wsl$\Ubuntu\home
 
+------------------------
+------------------------
+Getting X11 forwarding to work (e.g. for GUI applications, matplotlib etc)
+follow this answer: https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
+
+
+
+
+--------------
+--------------
+Extra PyQt5 libs:
+solution from https://linuxtut.com/en/83917d3f9f5dd35457e1/
+find extra deps not installed using
+ldd ~/miniconda3/envs/3DP/lib/python3.7/site-packages/PyQt5/Qt5/plugins/platforms/lib
+qxcb.so | grep "not found"
+*** this didn't solve the vispy backend issue unfortunutely
 
 
 
